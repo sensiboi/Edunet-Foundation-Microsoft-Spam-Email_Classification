@@ -27,65 +27,7 @@ print('index','  ','0s','     ','other', '     columns')
 for i in range(len(data.columns)):
     c = data[data[data.columns[i]] == 0].shape[0]
     print (i,'    ',c,'     ',4601-c,'   ', data.columns[i])
-# Plot box plot
-ax = sns.boxplot(x = 'class', y = 'word_freq_our', data = data, whis = 10)
-ax.set(title = 'Box plot ', xlabel = 'Class', ylabel = 'word_freq_our')
-fig, axes = plt.subplots(1, 6, figsize = (10, 5))
-for i in range(0,6):
-    sns.boxplot(x='class', y = data.columns[i], data = data, orient = 'v', ax = axes[i], whis=10)
-plt.tight_layout()fig, axes = plt.subplots(1, 6, figsize = (10, 5))
-j = 0
-for i in range(6,12):
-    sns.boxplot(x='class', y = data.columns[i], data = data, orient = 'v', ax = axes[j], whis=10)
-    j+=1
-plt.tight_layout()
-fig, axes = plt.subplots(1, 6, figsize = (10, 5))
-j = 0
-for i in range(12,18):
-    sns.boxplot(x='class', y = data.columns[i], data = data, orient = 'v', ax = axes[j], whis=10)
-    j+=1
-plt.tight_layout()fig, axes = plt.subplots(1, 6, figsize = (10, 5))
-j = 0
-for i in range(18,24):
-    sns.boxplot(x='class', y = data.columns[i], data = data, orient = 'v', ax = axes[j], whis=10)
-    j+=1
-plt.tight_layout()
-fig, axes = plt.subplots(1, 6, figsize = (10, 5))
-j = 0
-for i in range(24,30):
-    sns.boxplot(x='class', y = data.columns[i], data = data, orient = 'v', ax = axes[j], whis=10)
-    j+=1
-plt.tight_layout()
-fig, axes = plt.subplots(1, 6, figsize = (10, 5))
-j = 0
-for i in range(30,36):
-    sns.boxplot(x='class', y = data.columns[i], data = data, orient = 'v', ax = axes[j], whis=10)
-    j+=1
-plt.tight_layout()
-fig, axes = plt.subplots(1, 6, figsize = (10, 5))
-j = 0
-for i in range(36,42):
-    sns.boxplot(x='class', y = data.columns[i], data = data, orient = 'v', ax = axes[j], whis=10)
-    j+=1
-plt.tight_layout()
-fig, axes = plt.subplots(1, 6, figsize = (10, 5))
-j = 0
-for i in range(42,48):
-    sns.boxplot(x='class', y = data.columns[i], data = data, orient = 'v', ax = axes[j], whis=10)
-    j+=1
-plt.tight_layout()
-fig, axes = plt.subplots(1, 6, figsize = (10, 5))
-j = 0
-for i in range(48,54):
-    sns.boxplot(x='class', y = data.columns[i], data = data, orient = 'v', ax = axes[j], whis=10)
-    j+=1
-plt.tight_layout()
-fig, axes = plt.subplots(1, 6, figsize = (10, 5))
-j = 0
-for i in range(54,56):
-    sns.boxplot(x='class', y = data.columns[i], data = data, orient = 'v', ax = axes[j], whis=10)
-    j+=1
-plt.tight_layout()
+
 #Splitting dataset for classification
 #creating test and train sets
 x_train, x_test, y_train, y_test = train_test_split(data.iloc[:,:-1],data['class'],test_size=0.2, random_state=0)
